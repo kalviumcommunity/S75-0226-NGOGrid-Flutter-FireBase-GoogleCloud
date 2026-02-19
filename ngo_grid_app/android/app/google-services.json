@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "62074515787",
+    "project_id": "ngogrid-c019b",
+    "storage_bucket": "ngogrid-c019b.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:62074515787:android:23438b7699ba339197b8ce",
+        "android_client_info": {
+          "package_name": "com.example.ngo_grid_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "62074515787-o07hi8us0m18e8fose5607tjterpl1uf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCo_uufL8Apn6v6pN-cYl6SY1Me1Ebbleo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "62074515787-o07hi8us0m18e8fose5607tjterpl1uf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
