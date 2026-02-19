@@ -1,4 +1,5 @@
-  import 'package:flutter/material.dart';
+ import 'package:flutter/material.dart';
+ import 'widget_tree_demo_screen.dart';
 
 class DashboardScreen extends StatefulWidget {
   const DashboardScreen({super.key});
@@ -76,6 +77,20 @@ class _DashboardScreenState extends State<DashboardScreen> {
                 });
               },
               child: const Text("Reset Counter"),
+            ),
+
+            const SizedBox(height: 20),
+
+            // Navigate to Widget Tree Demo
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute<void>(
+                    builder: (_) => const WidgetTreeDemoScreen(),
+                  ),
+                );
+              },
+              child: const Text("Open Widget Tree Demo"),
             ),
           ],
         ),
