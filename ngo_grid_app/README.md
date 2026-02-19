@@ -27,3 +27,31 @@ A well-organized structure enhances teamwork and development speed by:
 - Enabling parallel development on different features
 - Facilitating onboarding of new team members
 - Improving maintainability and reducing bugs due to clear separation of responsibilities
+
+## Widget Tree Demo
+
+This app includes a screen to illustrate Flutter's widget tree and reactive UI model. Access it from the Dashboard via “Open Widget Tree Demo”.
+
+### Widget Hierarchy (indent-based)
+
+Scaffold  
+┣ AppBar  
+┗ Body  
+ ┗ Center  
+  ┗ Container  
+   ┗ Column  
+    ┣ Text (title)  
+    ┣ Text (count)  
+    ┣ Row  
+    ┃ ┣ ElevatedButton (Increment)  
+    ┃ ┗ OutlinedButton (Change Background)  
+    ┣ Row  
+    ┃ ┣ Text ('Show helper')  
+    ┃ ┗ Switch (toggle visibility)  
+    ┗ if (showHelper) Row [Icon, Text]
+
+### Reactive Updates
+
+- Increment button updates `count` via `setState`, rebuilding the count Text.
+- Change Background cycles a predefined color list for the Container.
+- Switch toggles the visibility of the helper Row.
