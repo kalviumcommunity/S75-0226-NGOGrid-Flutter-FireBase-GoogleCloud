@@ -60,6 +60,31 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                 style: const TextStyle(color: Colors.white, fontSize: 16),
               ),
             ),
+            const SizedBox(height: 30),
+            // Navigation Buttons
+            Column(
+              children: [
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                  style: ElevatedButton.styleFrom(
+                    padding: const EdgeInsets.symmetric(vertical: 15),
+                  ),
+                  child: const Text(
+                    "Back to Home",
+                    style: TextStyle(fontSize: 16),
+                  ),
+                ),
+                const SizedBox(height: 15),
+                OutlinedButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/dashboard');
+                  },
+                  child: const Text("Go to Dashboard"),
+                ),
+              ],
+            ),
           ],
         ),
       ),

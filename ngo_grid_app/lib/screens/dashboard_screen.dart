@@ -1,5 +1,5 @@
- import 'package:flutter/material.dart';
- import 'widget_tree_demo_screen.dart';
+import 'package:flutter/material.dart';
+import 'widget_tree_demo_screen.dart';
 
 class DashboardScreen extends StatefulWidget {
   const DashboardScreen({super.key});
@@ -17,13 +17,13 @@ class _DashboardScreenState extends State<DashboardScreen> {
       appBar: AppBar(
         title: const Text("NGOGrid Dashboard"),
         centerTitle: true,
+        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
       ),
       body: Padding(
         padding: const EdgeInsets.all(20),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-
             // Header Card
             Container(
               padding: const EdgeInsets.all(20),
@@ -77,6 +77,34 @@ class _DashboardScreenState extends State<DashboardScreen> {
                 });
               },
               child: const Text("Reset Counter"),
+            ),
+
+            const SizedBox(height: 30),
+
+            // Navigation Buttons
+            Column(
+              children: [
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.green,
+                    padding: const EdgeInsets.symmetric(vertical: 15),
+                  ),
+                  child: const Text(
+                    "Back to Home",
+                    style: TextStyle(color: Colors.white, fontSize: 16),
+                  ),
+                ),
+                const SizedBox(height: 15),
+                OutlinedButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/welcome');
+                  },
+                  child: const Text("Go to Welcome Screen"),
+                ),
+              ],
             ),
 
             const SizedBox(height: 20),
