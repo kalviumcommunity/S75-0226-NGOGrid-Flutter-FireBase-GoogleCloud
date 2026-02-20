@@ -55,3 +55,72 @@ Scaffold
 - Increment button updates `count` via `setState`, rebuilding the count Text.
 - Change Background cycles a predefined color list for the Container.
 - Switch toggles the visibility of the helper Row.
+
+## Multi-Screen Navigation
+
+### Project Title
+**NGO Grid - Volunteer Coordination Platform**
+
+### Navigation Setup Summary
+Flutter app with 3-screen navigation using MaterialApp named routes for NGO volunteer management.
+
+### Code Implementation
+
+**main.dart - Route Configuration**
+```dart
+MaterialApp(
+  initialRoute: '/',
+  routes: {
+    '/': (context) => const HomeScreen(),
+    '/dashboard': (context) => const DashboardScreen(),
+    '/welcome': (context) => const WelcomeScreen(),
+  },
+)
+```
+
+**Home Screen Navigation**
+```dart
+ElevatedButton(
+  onPressed: () {
+    Navigator.pushNamed(context, '/dashboard');
+  },
+  child: const Text('Go to Dashboard'),
+)
+```
+
+**Dashboard Screen Navigation**
+```dart
+ElevatedButton(
+  onPressed: () {
+    Navigator.pop(context);
+  },
+  child: const Text('Back to Home'),
+)
+```
+
+**Welcome Screen Navigation**
+```dart
+ElevatedButton(
+  onPressed: () {
+    Navigator.pop(context);
+  },
+  child: const Text('Back to Home'),
+)
+```
+
+### Screenshots
+*Home Screen*: NGO Grid welcome interface with navigation buttons
+*Dashboard Screen*: Task management with back navigation
+*Navigation Flow*: Smooth transitions between screens
+
+### Reflection
+
+**How Navigator manages app stack:**
+Uses stack-based system - screens pushed on top, popped off. Maintains navigation history for back functionality.
+
+**Benefits of named routes:**
+1. Centralized route management in one location
+2. Type safety with compile-time route validation
+3. Better organization and maintainability
+4. Deep linking support for direct screen access
+5. Scalable architecture for large applications

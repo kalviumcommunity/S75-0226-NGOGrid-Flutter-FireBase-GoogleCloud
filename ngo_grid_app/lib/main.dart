@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
-import 'screens/counter_screen.dart';
+import 'screens/home_screen.dart';
+import 'screens/dashboard_screen.dart';
+import 'screens/welcome_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -19,8 +21,15 @@ class MyApp extends StatelessWidget {
       title: 'NGO Grid - Volunteer Coordination Platform',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.green),
+        useMaterial3: true,
       ),
-      home: const CounterScreen(),
+      debugShowCheckedModeBanner: false,
+      initialRoute: '/',
+      routes: {
+        '/': (context) => const HomeScreen(),
+        '/dashboard': (context) => const DashboardScreen(),
+        '/welcome': (context) => const WelcomeScreen(),
+      },
     );
   }
 }
