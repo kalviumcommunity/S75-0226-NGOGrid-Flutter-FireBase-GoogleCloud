@@ -4,6 +4,7 @@ import 'firebase_options.dart';
 import 'screens/home_screen.dart';
 import 'screens/dashboard_screen.dart';
 import 'screens/welcome_screen.dart';
+import 'screens/responsive_layout.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -29,6 +30,7 @@ class MyApp extends StatelessWidget {
         '/': (context) => const HomeScreen(),
         '/dashboard': (context) => const DashboardScreen(),
         '/welcome': (context) => const WelcomeScreen(),
+        '/responsive': (context) => const ResponsiveLayout(),
       },
     );
   }

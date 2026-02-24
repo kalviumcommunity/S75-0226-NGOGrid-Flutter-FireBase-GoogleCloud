@@ -60,6 +60,13 @@ class HomeScreen extends StatelessWidget {
                 },
                 child: const Text('View Welcome Screen'),
               ),
+              const SizedBox(height: 20),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, '/responsive');
+                },
+                child: const Text('View Responsive Layout'),
+              ),
             ],
           ),
         ),
