@@ -22,6 +22,7 @@ class HomeScreen extends StatelessWidget {
                 color: Colors.green,
               ),
               const SizedBox(height: 20),
+
               const Text(
                 'Welcome to NGO Grid',
                 style: TextStyle(
@@ -29,7 +30,9 @@ class HomeScreen extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                 ),
               ),
+
               const SizedBox(height: 10),
+
               const Text(
                 'Volunteer Coordination Platform',
                 style: TextStyle(
@@ -37,7 +40,10 @@ class HomeScreen extends StatelessWidget {
                   color: Colors.grey,
                 ),
               ),
+
               const SizedBox(height: 40),
+
+              // 🔹 Dashboard
               ElevatedButton(
                 onPressed: () {
                   Navigator.pushNamed(context, '/dashboard');
@@ -53,19 +59,45 @@ class HomeScreen extends StatelessWidget {
                   style: TextStyle(fontSize: 16),
                 ),
               ),
+
               const SizedBox(height: 20),
+
+              // 🔹 Welcome
               OutlinedButton(
                 onPressed: () {
                   Navigator.pushNamed(context, '/welcome');
                 },
                 child: const Text('View Welcome Screen'),
               ),
+
               const SizedBox(height: 20),
+
+              // 🔹 Responsive Layout
               ElevatedButton(
                 onPressed: () {
                   Navigator.pushNamed(context, '/responsive');
                 },
                 child: const Text('View Responsive Layout'),
+              ),
+
+              const SizedBox(height: 20),
+
+
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, '/volunteers');
+                },
+                child: const Text('View Volunteers (ListView)'),
+              ),
+
+              const SizedBox(height: 20),
+
+
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, '/tasks');
+                },
+                child: const Text('View Tasks (GridView)'),
               ),
             ],
           ),
