@@ -13,7 +13,7 @@ class _CounterScreenState extends State<CounterScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Counter Example")),
+      appBar: AppBar(title: const Text("NGOGrid Counter App")),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
