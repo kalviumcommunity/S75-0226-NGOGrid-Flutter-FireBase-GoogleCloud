@@ -23,22 +23,14 @@ class HomeScreen extends StatelessWidget {
               ),
               const SizedBox(height: 20),
 
-              const Text(
-                'Welcome to NGO Grid',
-                style: TextStyle(
-                  fontSize: 28,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-
+              Text('Welcome to NGO Grid',
+             style: Theme.of(context).textTheme.headlineLarge,
+            ),
               const SizedBox(height: 10),
 
-              const Text(
-                'Volunteer Coordination Platform',
-                style: TextStyle(
-                  fontSize: 18,
-                  color: Colors.grey,
-                ),
+              Text(
+                'Your Volunteer Coordination Platform',
+                style: Theme.of(context).textTheme.bodyLarge,
               ),
 
               const SizedBox(height: 40),
@@ -82,7 +74,7 @@ class HomeScreen extends StatelessWidget {
 
               const SizedBox(height: 20),
 
-
+              // 🔥 3.18 – ListView
               ElevatedButton(
                 onPressed: () {
                   Navigator.pushNamed(context, '/volunteers');

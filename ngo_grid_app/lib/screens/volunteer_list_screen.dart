@@ -6,7 +6,7 @@ class VolunteerListScreen extends StatelessWidget {
   final List<String> volunteers = const [
     "Arun",
     "Priya",
-    "Rahul",
+    "kumar",
     "Divya",
     "Karthik",
     "Anitha",
