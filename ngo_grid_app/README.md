@@ -124,3 +124,65 @@ Uses stack-based system - screens pushed on top, popped off. Maintains navigatio
 3. Better organization and maintainability
 4. Deep linking support for direct screen access
 5. Scalable architecture for large applications
+
+## State Management Demo
+
+### Project Overview
+A Flutter demonstration of **Stateful Widgets** and **setState()** for managing local state. This counter application showcases how Flutter's reactive model works through dynamic UI updates based on user interactions.
+
+### Code Implementation
+
+**StateManagementDemo - StatefulWidget Structure**
+```dart
+class StateManagementDemo extends StatefulWidget {
+  const StateManagementDemo({super.key});
+
+  @override
+  _StateManagementDemoState createState() => _StateManagementDemoState();
+}
+```
+
+**State Management with setState()**
+```dart
+class _StateManagementDemoState extends State<StateManagementDemo> {
+  int _counter = 0;
+
+  void _incrementCounter() {
+    setState(() {
+      _counter++;
+    });
+  }
+
+  void _decrementCounter() {
+    setState(() {
+      if (_counter > 0) _counter--;
+    });
+  }
+}
+```
+
+**Conditional State Update**
+```dart
+Container(
+  color: _counter >= 5 ? Colors.greenAccent : Colors.white,
+  child: Center(
+    child: Text('Count: $_counter'),
+  ),
+)
+```
+
+### Screenshots
+*Before State Change*: Counter at 0, white background
+*After State Change*: Counter at 5+, green background indicating threshold reached
+*Button Interaction*: Increment/Decrement buttons update counter dynamically
+
+### Reflection
+
+**What's the difference between Stateless and Stateful widgets?**
+StatelessWidget is immutable with no internal state—its properties never change once built. StatefulWidget can change dynamically based on user interactions or data updates. Use StatelessWidget for static UI elements (text, logos) and StatefulWidget for interactive elements (counters, forms, toggles).
+
+**Why is setState() important for Flutter's reactive model?**
+setState() notifies Flutter's rendering engine that the widget's data has changed, triggering a rebuild of the affected UI. Without it, variable changes won't reflect in the UI. It enables Flutter's reactive programming model where the UI automatically responds to state changes, maintaining consistency between data and visual representation.
+
+**How can improper use of setState() affect performance?**
+Calling setState() too frequently causes unnecessary rebuilds, consuming CPU and battery resources. Placing setState() inside build() creates infinite rebuild loops. Wrapping unrelated widgets in setState() rebuilds more UI than needed. Best practice: Update only the minimal state necessary and use smaller widgets to limit rebuild scope.
