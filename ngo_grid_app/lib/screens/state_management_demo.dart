@@ -4,6 +4,7 @@ class StateManagementDemo extends StatefulWidget {
   const StateManagementDemo({super.key});
 
   @override
+  // ignore: library_private_types_in_public_api
   _StateManagementDemoState createState() => _StateManagementDemoState();
 }
 
