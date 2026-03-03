@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
-
+import 'screens/volunteer_form_screen.dart';
 import 'screens/home_screen.dart';
 import 'screens/dashboard_screen.dart';
 import 'screens/welcome_screen.dart';
@@ -77,6 +77,7 @@ class MyApp extends StatelessWidget {
         '/responsive': (context) => const ResponsiveLayout(),
         '/volunteers': (context) => const VolunteerListScreen(),
         '/tasks': (context) => const TaskGridScreen(),
+        '/form': (context) => const VolunteerFormScreen(),
       },
     );
   }

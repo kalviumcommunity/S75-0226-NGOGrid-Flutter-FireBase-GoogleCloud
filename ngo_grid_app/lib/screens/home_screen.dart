@@ -23,9 +23,11 @@ class HomeScreen extends StatelessWidget {
               ),
               const SizedBox(height: 20),
 
-              Text('Welcome to NGO Grid',
-             style: Theme.of(context).textTheme.headlineLarge,
-            ),
+              Text(
+                'Welcome to NGO Grid',
+                style: Theme.of(context).textTheme.headlineLarge,
+              ),
+
               const SizedBox(height: 10),
 
               Text(
@@ -40,16 +42,7 @@ class HomeScreen extends StatelessWidget {
                 onPressed: () {
                   Navigator.pushNamed(context, '/dashboard');
                 },
-                style: ElevatedButton.styleFrom(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 30,
-                    vertical: 15,
-                  ),
-                ),
-                child: const Text(
-                  'Go to Dashboard',
-                  style: TextStyle(fontSize: 16),
-                ),
+                child: const Text('Go to Dashboard'),
               ),
 
               const SizedBox(height: 20),
@@ -84,12 +77,22 @@ class HomeScreen extends StatelessWidget {
 
               const SizedBox(height: 20),
 
-
+              // 🔥 3.18 – GridView
               ElevatedButton(
                 onPressed: () {
                   Navigator.pushNamed(context, '/tasks');
                 },
                 child: const Text('View Tasks (GridView)'),
+              ),
+
+              const SizedBox(height: 20),
+
+              // 🔥 3.20 – Form
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, '/form');
+                },
+                child: const Text('Volunteer Registration Form'),
               ),
             ],
           ),
