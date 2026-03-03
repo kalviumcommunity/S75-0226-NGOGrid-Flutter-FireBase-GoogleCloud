@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../widgets/custom_nav_button.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -37,62 +38,50 @@ class HomeScreen extends StatelessWidget {
 
               const SizedBox(height: 40),
 
-              // 🔹 Dashboard
-              ElevatedButton(
-                onPressed: () {
-                  Navigator.pushNamed(context, '/dashboard');
-                },
-                child: const Text('Go to Dashboard'),
+              CustomNavButton(
+                title: 'Go to Dashboard',
+                routeName: '/dashboard',
+                icon: Icons.dashboard,
               ),
 
-              const SizedBox(height: 20),
+              const SizedBox(height: 15),
 
-              // 🔹 Welcome
-              OutlinedButton(
-                onPressed: () {
-                  Navigator.pushNamed(context, '/welcome');
-                },
-                child: const Text('View Welcome Screen'),
+              CustomNavButton(
+                title: 'View Welcome Screen',
+                routeName: '/welcome',
+                icon: Icons.waving_hand,
               ),
 
-              const SizedBox(height: 20),
+              const SizedBox(height: 15),
 
-              // 🔹 Responsive Layout
-              ElevatedButton(
-                onPressed: () {
-                  Navigator.pushNamed(context, '/responsive');
-                },
-                child: const Text('View Responsive Layout'),
+              CustomNavButton(
+                title: 'View Responsive Layout',
+                routeName: '/responsive',
+                icon: Icons.phone_android,
               ),
 
-              const SizedBox(height: 20),
+              const SizedBox(height: 15),
 
-              // 🔥 3.18 – ListView
-              ElevatedButton(
-                onPressed: () {
-                  Navigator.pushNamed(context, '/volunteers');
-                },
-                child: const Text('View Volunteers (ListView)'),
+              CustomNavButton(
+                title: 'View Volunteers (ListView)',
+                routeName: '/volunteers',
+                icon: Icons.people,
               ),
 
-              const SizedBox(height: 20),
+              const SizedBox(height: 15),
 
-              // 🔥 3.18 – GridView
-              ElevatedButton(
-                onPressed: () {
-                  Navigator.pushNamed(context, '/tasks');
-                },
-                child: const Text('View Tasks (GridView)'),
+              CustomNavButton(
+                title: 'View Tasks (GridView)',
+                routeName: '/tasks',
+                icon: Icons.grid_view,
               ),
 
-              const SizedBox(height: 20),
+              const SizedBox(height: 15),
 
-              // 🔥 3.20 – Form
-              ElevatedButton(
-                onPressed: () {
-                  Navigator.pushNamed(context, '/form');
-                },
-                child: const Text('Volunteer Registration Form'),
+              CustomNavButton(
+                title: 'Volunteer Registration Form',
+                routeName: '/form',
+                icon: Icons.app_registration,
               ),
             ],
           ),
