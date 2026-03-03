@@ -186,3 +186,51 @@ setState() notifies Flutter's rendering engine that the widget's data has change
 
 **How can improper use of setState() affect performance?**
 Calling setState() too frequently causes unnecessary rebuilds, consuming CPU and battery resources. Placing setState() inside build() creates infinite rebuild loops. Wrapping unrelated widgets in setState() rebuilds more UI than needed. Best practice: Update only the minimal state necessary and use smaller widgets to limit rebuild scope.
+
+## Responsive Design Implementation
+
+### Overview
+Implements responsive design using **MediaQuery** and **LayoutBuilder** for mobile (< 600px), tablet (600-1024px), and desktop (≥ 1024px) devices.
+
+### Code Snippets
+
+**MediaQuery Example**
+```dart
+Container(
+  width: screenWidth * 0.8,
+  height: screenHeight * 0.1,
+  padding: EdgeInsets.all(screenWidth * 0.05),
+)
+```
+
+**LayoutBuilder Example**
+```dart
+LayoutBuilder(
+  builder: (context, constraints) {
+    bool isMobile = constraints.maxWidth < 600;
+    return isMobile ? Column(...) : Row(...);
+  },
+)
+```
+
+### Responsive Files
+- [responsive_layout.dart](lib/screens/responsive_layout.dart)
+- [responsive_home.dart](lib/screens/responsive_home.dart)
+- [state_management_demo.dart](lib/screens/state_management_demo.dart)
+- [responsive_utils.dart](lib/utilities/responsive_utils.dart)
+
+### Screenshots
+- **Mobile**: Single-column layout, vertical buttons, responsive padding
+- **Tablet**: 2-column grid, horizontal panels, medium spacing
+- **Desktop**: 4-column grid, 3-panel layout, generous spacing
+
+### Reflection
+
+**Why is responsiveness important in mobile development?**
+Ensures optimal UX across devices. Single codebase vs multiple apps. Improves accessibility and reduces poor app ratings.
+
+**How does LayoutBuilder differ from MediaQuery?**
+MediaQuery retrieves static device metrics. LayoutBuilder provides dynamic constraints and rebuilds on changes. Best practice: use both together.
+
+**How could your team scale the app design efficiently?**
+Create centralized ResponsiveUtils class with reusable methods. Define consistent breakpoints across screens. Extract responsive patterns into custom widgets.
