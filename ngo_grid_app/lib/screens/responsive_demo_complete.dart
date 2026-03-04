@@ -104,7 +104,7 @@ class ResponsiveDemoComplete extends StatelessWidget {
                   ),
                 ),
               )
-              .toList(),
+              ,
         ],
       ),
     );
@@ -212,7 +212,7 @@ class ResponsiveDemoComplete extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          'Responsive Grid (${crossAxisCount} columns)',
+          'Responsive Grid ($crossAxisCount columns)',
           style: TextStyle(
             fontSize: 16,
             fontWeight: FontWeight.bold,

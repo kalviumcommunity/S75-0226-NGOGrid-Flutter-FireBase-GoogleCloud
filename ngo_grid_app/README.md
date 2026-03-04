@@ -234,3 +234,51 @@ MediaQuery retrieves static device metrics. LayoutBuilder provides dynamic const
 
 **How could your team scale the app design efficiently?**
 Create centralized ResponsiveUtils class with reusable methods. Define consistent breakpoints across screens. Extract responsive patterns into custom widgets.
+
+## Animations
+
+### Project Title
+**NGO Grid - Animations**
+
+### Description
+Implemented various animations to enhance the user experience, including:
+- **Implicit Animations:** `AnimatedContainer` for color changes and `AnimatedOpacity` for fade effects.
+- **Explicit Animations:** `AnimationController` for more complex animations like list and grid item animations.
+- **Page Transitions:** A custom `PageRouteBuilder` for smooth slide transitions between screens.
+
+### Code Snippets
+
+**AnimatedContainer**
+```dart
+AnimatedContainer(
+  duration: const Duration(seconds: 1),
+  color: _toggled ? Colors.teal : Colors.green,
+  // ...
+)
+```
+
+**Fade and Slide Animation**
+```dart
+FadeTransition(
+  opacity: _animation,
+  child: SlideTransition(
+    position: Tween<Offset>(
+      begin: const Offset(0, 0.5),
+      end: Offset.zero,
+    ).animate(_animation),
+    child: // ...
+  ),
+)
+```
+
+### Reflection
+
+**Why are animations important for UX?**
+Animations guide user attention, provide visual feedback, and make the app feel more responsive and intuitive.
+
+**What are the differences between implicit and explicit animations?**
+- **Implicit animations** are simpler and automatically handle the animation when a property changes.
+- **Explicit animations** provide more control and are better for complex or custom effects, using an `AnimationController`.
+
+**How can you apply animations effectively in your team’s main app project?**
+Start with subtle animations for common interactions like button presses and screen transitions. Use animations to draw attention to important information or changes in state. Ensure animations are quick and don't distract from the user's task.

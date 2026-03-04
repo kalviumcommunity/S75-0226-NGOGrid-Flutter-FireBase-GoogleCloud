@@ -8,6 +8,7 @@ import 'screens/welcome_screen.dart';
 import 'screens/responsive_layout.dart';
 import 'screens/volunteer_list_screen.dart';
 import 'screens/task_grid_screen.dart';
+import 'screens/login_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -78,6 +79,7 @@ class MyApp extends StatelessWidget {
         '/volunteers': (context) => const VolunteerListScreen(),
         '/tasks': (context) => const TaskGridScreen(),
         '/form': (context) => const VolunteerFormScreen(),
+        '/login': (context) => const LoginScreen(),
       },
     );
   }

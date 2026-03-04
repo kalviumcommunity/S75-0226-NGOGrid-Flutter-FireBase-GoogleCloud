@@ -1,8 +1,15 @@
 import 'package:flutter/material.dart';
 import '../widgets/custom_nav_button.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  bool _toggled = false;
 
   @override
   Widget build(BuildContext context) {
@@ -17,10 +24,27 @@ class HomeScreen extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const Icon(
-                Icons.volunteer_activism,
-                size: 100,
-                color: Colors.green,
+              GestureDetector(
+                onTap: () {
+                  setState(() {
+                    _toggled = !_toggled;
+                  });
+                },
+                child: AnimatedContainer(
+                  duration: const Duration(seconds: 1),
+                  curve: Curves.easeInOut,
+                  height: 100,
+                  width: 100,
+                  decoration: BoxDecoration(
+                    color: _toggled ? Colors.teal : Colors.green,
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  child: const Icon(
+                    Icons.volunteer_activism,
+                    size: 60,
+                    color: Colors.white,
+                  ),
+                ),
               ),
               const SizedBox(height: 20),
 
@@ -37,6 +61,14 @@ class HomeScreen extends StatelessWidget {
               ),
 
               const SizedBox(height: 40),
+
+              CustomNavButton(
+                title: 'Login',
+                routeName: '/login',
+                icon: Icons.login,
+              ),
+
+              const SizedBox(height: 15),
 
               CustomNavButton(
                 title: 'Go to Dashboard',
