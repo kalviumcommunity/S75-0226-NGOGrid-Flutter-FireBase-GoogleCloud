@@ -18,7 +18,6 @@ class ResponsiveHome extends StatelessWidget {
           // Define responsive breakpoints
           bool isMobile = constraints.maxWidth < 600;
           bool isTablet = constraints.maxWidth >= 600 && constraints.maxWidth < 1024;
-          bool isDesktop = constraints.maxWidth >= 1024;
           
           int crossAxisCount = isMobile ? 1 : (isTablet ? 2 : 4);
           double childAspectRatio = isMobile ? 2 : 1.5;

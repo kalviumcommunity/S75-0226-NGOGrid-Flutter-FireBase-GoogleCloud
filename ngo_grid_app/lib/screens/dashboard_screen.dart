@@ -13,6 +13,11 @@ class _DashboardScreenState extends State<DashboardScreen> {
 
   @override
   Widget build(BuildContext context) {
+
+    // 🔹 Receive argument from HomeScreen
+    final String userRole =
+        ModalRoute.of(context)?.settings.arguments as String? ?? "Volunteer";
+
     return Scaffold(
       appBar: AppBar(
         title: const Text("NGOGrid Dashboard"),
@@ -24,6 +29,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
+
             // Header Card
             Container(
               padding: const EdgeInsets.all(20),
@@ -33,11 +39,25 @@ class _DashboardScreenState extends State<DashboardScreen> {
               ),
               child: Column(
                 children: [
+
+                  // 🔥 New line added for 3.24
+                  Text(
+                    "Welcome $userRole",
+                    style: const TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+
+                  const SizedBox(height: 10),
+
                   const Text(
                     "Completed Tasks",
                     style: TextStyle(fontSize: 18),
                   ),
+
                   const SizedBox(height: 10),
+
                   Text(
                     "$completedTasks",
                     style: const TextStyle(
@@ -98,6 +118,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                   ),
                 ),
                 const SizedBox(height: 15),
+
                 OutlinedButton(
                   onPressed: () {
                     Navigator.pushNamed(context, '/welcome');

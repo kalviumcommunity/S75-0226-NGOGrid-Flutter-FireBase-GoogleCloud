@@ -4,9 +4,14 @@ import '../widgets/custom_nav_button.dart';
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
+@override
+Widget build(BuildContext context) {
+
+  // ignore: unused_local_variable
+  final String userRole =
+      ModalRoute.of(context)?.settings.arguments as String? ?? "Volunteer";
+
+  return Scaffold(
       appBar: AppBar(
         title: const Text('NGO Grid - Home'),
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
@@ -38,10 +43,13 @@ class HomeScreen extends StatelessWidget {
 
               const SizedBox(height: 40),
 
-              CustomNavButton(
-                title: 'Go to Dashboard',
-                routeName: '/dashboard',
-                icon: Icons.dashboard,
+            const SizedBox(height: 20),
+
+            CustomNavButton(
+              title: 'Go to Dashboard',
+              routeName: '/dashboard',
+              icon: Icons.dashboard,
+              arguments: 'Volunteer Admin',
               ),
 
               const SizedBox(height: 15),

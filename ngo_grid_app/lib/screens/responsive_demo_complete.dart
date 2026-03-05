@@ -1,3 +1,5 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:flutter/material.dart';
 
 /// Complete Responsive Design Demo
@@ -104,7 +106,7 @@ class ResponsiveDemoComplete extends StatelessWidget {
                   ),
                 ),
               )
-              .toList(),
+              ,
         ],
       ),
     );
@@ -212,7 +214,7 @@ class ResponsiveDemoComplete extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          'Responsive Grid (${crossAxisCount} columns)',
+          'Responsive Grid ($crossAxisCount columns)',
           style: TextStyle(
             fontSize: 16,
             fontWeight: FontWeight.bold,

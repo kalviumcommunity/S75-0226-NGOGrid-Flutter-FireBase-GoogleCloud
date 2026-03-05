@@ -4,12 +4,14 @@ class CustomNavButton extends StatelessWidget {
   final String title;
   final String routeName;
   final IconData? icon;
+  final Object? arguments;   // added
 
   const CustomNavButton({
     super.key,
     required this.title,
     required this.routeName,
     this.icon,
+    this.arguments,
   });
 
   @override
@@ -18,7 +20,11 @@ class CustomNavButton extends StatelessWidget {
       width: double.infinity,
       child: ElevatedButton.icon(
         onPressed: () {
-          Navigator.pushNamed(context, routeName);
+          Navigator.pushNamed(
+            context,
+            routeName,
+            arguments: arguments,   // pass arguments
+          );
         },
         icon: Icon(icon ?? Icons.arrow_forward),
         label: Text(title),
