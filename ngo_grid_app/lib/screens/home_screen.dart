@@ -4,6 +4,16 @@ import '../widgets/custom_nav_button.dart';
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
+ sprint-2-3.24-navigation-arguments
+@override
+Widget build(BuildContext context) {
+
+  // ignore: unused_local_variable
+  final String userRole =
+      ModalRoute.of(context)?.settings.arguments as String? ?? "Volunteer";
+
+  return Scaffold(
+
   @override
   State<HomeScreen> createState() => _HomeScreenState();
 }
@@ -14,6 +24,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+main
       appBar: AppBar(
         title: const Text('NGO Grid - Home'),
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
@@ -62,6 +73,15 @@ class _HomeScreenState extends State<HomeScreen> {
 
               const SizedBox(height: 40),
 
+ sprint-2-3.24-navigation-arguments
+            const SizedBox(height: 20),
+
+            CustomNavButton(
+              title: 'Go to Dashboard',
+              routeName: '/dashboard',
+              icon: Icons.dashboard,
+              arguments: 'Volunteer Admin',
+
               CustomNavButton(
                 title: 'Login',
                 routeName: '/login',
@@ -74,6 +94,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 title: 'Go to Dashboard',
                 routeName: '/dashboard',
                 icon: Icons.dashboard,
+ main
               ),
 
               const SizedBox(height: 15),

@@ -5,6 +5,7 @@ class ResponsiveLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // ignore: unused_local_variable
     var screenWidth = MediaQuery.of(context).size.width;
     var screenHeight = MediaQuery.of(context).size.height;
     
@@ -18,6 +19,7 @@ class ResponsiveLayout extends StatelessWidget {
           // Define breakpoints for different device sizes
           bool isMobile = constraints.maxWidth < 600;
           bool isTablet = constraints.maxWidth >= 600 && constraints.maxWidth < 1024;
+          // ignore: unused_local_variable
           bool isDesktop = constraints.maxWidth >= 1024;
 
           return Container(

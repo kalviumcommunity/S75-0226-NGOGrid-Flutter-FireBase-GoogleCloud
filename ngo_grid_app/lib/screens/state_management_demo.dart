@@ -1,3 +1,5 @@
+// ignore_for_file: unused_local_variable
+
 import 'package:flutter/material.dart';
 
 class StateManagementDemo extends StatefulWidget {
@@ -107,6 +109,7 @@ class _StateManagementDemoState extends State<StateManagementDemo> {
                               vertical: 8,
                             ),
                             decoration: BoxDecoration(
+                              // ignore: deprecated_member_use
                               color: Colors.white.withOpacity(0.3),
                               borderRadius: BorderRadius.circular(20),
                             ),

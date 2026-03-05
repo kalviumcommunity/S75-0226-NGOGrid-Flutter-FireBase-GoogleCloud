@@ -40,10 +40,7 @@ class _WidgetTreeDemoScreenState extends State<WidgetTreeDemoScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Widget Tree Demo'),
-        centerTitle: true,
-      ),
+      appBar: AppBar(title: const Text('Widget Tree Demo'), centerTitle: true),
       body: Center(
         child: Container(
           padding: const EdgeInsets.all(16),
@@ -61,7 +58,10 @@ class _WidgetTreeDemoScreenState extends State<WidgetTreeDemoScreen> {
               const SizedBox(height: 8),
               Text(
                 'Count: $count',
-                style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                style: const TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
               const SizedBox(height: 16),
               Row(
@@ -111,4 +111,3 @@ class _WidgetTreeDemoScreenState extends State<WidgetTreeDemoScreen> {
     );
   }
 }
-
