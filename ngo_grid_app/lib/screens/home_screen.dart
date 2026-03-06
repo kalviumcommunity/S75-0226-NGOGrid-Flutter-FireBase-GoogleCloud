@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+// ignore: must_be_immutable
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
@@ -58,6 +59,66 @@ class _HomeScreenState extends State<HomeScreen> {
                 'Your Volunteer Coordination Platform',
                 style: Theme.of(context).textTheme.bodyLarge,
               ),
+ sprint-2-3.26-firebase-setup
+
+              const SizedBox(height: 40),
+
+              const SizedBox(height: 20),
+
+              CustomNavButton(
+                title: 'Login',
+                routeName: '/login',
+                icon: Icons.login,
+              ),
+
+              const SizedBox(height: 15),
+
+              CustomNavButton(
+                title: 'Go to Dashboard',
+                routeName: '/dashboard',
+                icon: Icons.dashboard,
+              ),
+
+              const SizedBox(height: 15),
+
+              CustomNavButton(
+                title: 'View Welcome Screen',
+                routeName: '/welcome',
+                icon: Icons.waving_hand,
+              ),
+
+              const SizedBox(height: 15),
+
+              CustomNavButton(
+                title: 'View Responsive Layout',
+                routeName: '/responsive',
+                icon: Icons.phone_android,
+              ),
+
+              const SizedBox(height: 15),
+
+              CustomNavButton(
+                title: 'View Volunteers (ListView)',
+                routeName: '/volunteers',
+                icon: Icons.people,
+              ),
+
+              const SizedBox(height: 15),
+
+              CustomNavButton(
+                title: 'View Tasks (GridView)',
+                routeName: '/tasks',
+                icon: Icons.grid_view,
+              ),
+
+              const SizedBox(height: 15),
+
+              CustomNavButton(
+                title: 'Volunteer Registration Form',
+                routeName: '/form',
+                icon: Icons.app_registration,
+              ),
+ main
             ],
           ),
         ),
