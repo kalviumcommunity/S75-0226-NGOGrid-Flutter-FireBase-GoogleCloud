@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../widgets/custom_nav_button.dart';
 
 // ignore: must_be_immutable
 class HomeScreen extends StatefulWidget {
@@ -60,6 +59,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 'Your Volunteer Coordination Platform',
                 style: Theme.of(context).textTheme.bodyLarge,
               ),
+ sprint-2-3.26-firebase-setup
 
               const SizedBox(height: 40),
 
@@ -118,6 +118,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 routeName: '/form',
                 icon: Icons.app_registration,
               ),
+ main
             ],
           ),
         ),
