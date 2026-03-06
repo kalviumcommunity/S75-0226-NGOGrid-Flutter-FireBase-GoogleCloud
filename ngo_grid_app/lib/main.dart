@@ -1,20 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
-import 'screens/volunteer_form_screen.dart';
+
 import 'screens/home_screen.dart';
 import 'screens/dashboard_screen.dart';
 import 'screens/welcome_screen.dart';
 import 'screens/responsive_layout.dart';
 import 'screens/volunteer_list_screen.dart';
 import 'screens/task_grid_screen.dart';
+import 'screens/volunteer_form_screen.dart';
 import 'screens/login_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+
   runApp(const MyApp());
 }
 
@@ -30,19 +33,16 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         useMaterial3: true,
 
-        // 🌿 Global NGO Color Theme
         colorScheme: ColorScheme.fromSeed(
           seedColor: Colors.green,
           brightness: Brightness.light,
         ),
 
-        // 🌿 AppBar Styling
         appBarTheme: const AppBarTheme(
           centerTitle: true,
           elevation: 2,
         ),
 
-        // 🌿 Global Button Styling
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: ElevatedButton.styleFrom(
             padding: const EdgeInsets.symmetric(
@@ -56,7 +56,6 @@ class MyApp extends StatelessWidget {
           ),
         ),
 
-        // 🌿 Global Text Styling
         textTheme: const TextTheme(
           headlineLarge: TextStyle(
             fontSize: 28,

@@ -19,6 +19,72 @@ class _DashboardScreenState extends State<DashboardScreen> {
         ModalRoute.of(context)?.settings.arguments as String? ?? "Volunteer";
 
     return Scaffold(
+    drawer: Drawer(
+  child: ListView(
+    padding: EdgeInsets.zero,
+    children: [
+
+      const UserAccountsDrawerHeader(
+        accountName: Text("NGO Volunteer"),
+        accountEmail: Text("volunteer@ngo.org"),
+        currentAccountPicture: CircleAvatar(
+          backgroundColor: Colors.white,
+          child: Icon(Icons.volunteer_activism, size: 30),
+        ),
+      ),
+
+      ListTile(
+        leading: const Icon(Icons.home),
+        title: const Text("Home"),
+        onTap: () {
+          Navigator.pushNamed(context, '/');
+        },
+      ),
+
+      ListTile(
+        leading: const Icon(Icons.dashboard),
+        title: const Text("Dashboard"),
+        onTap: () {
+          Navigator.pushNamed(context, '/dashboard');
+        },
+      ),
+
+      ListTile(
+        leading: const Icon(Icons.people),
+        title: const Text("Volunteers"),
+        onTap: () {
+          Navigator.pushNamed(context, '/volunteers');
+        },
+      ),
+
+      ListTile(
+        leading: const Icon(Icons.grid_view),
+        title: const Text("Tasks"),
+        onTap: () {
+          Navigator.pushNamed(context, '/tasks');
+        },
+      ),
+
+      ListTile(
+        leading: const Icon(Icons.app_registration),
+        title: const Text("Register Volunteer"),
+        onTap: () {
+          Navigator.pushNamed(context, '/form');
+        },
+      ),
+
+      const Divider(),
+
+      ListTile(
+        leading: const Icon(Icons.logout),
+        title: const Text("Logout"),
+        onTap: () {
+          Navigator.pop(context);
+        },
+      ),
+    ],
+  ),
+),
       appBar: AppBar(
         title: const Text("NGOGrid Dashboard"),
         centerTitle: true,

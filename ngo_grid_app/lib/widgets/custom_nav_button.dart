@@ -11,7 +11,7 @@ class CustomNavButton extends StatelessWidget {
   final String title;
   final String routeName;
   final IconData? icon;
-  final Object? arguments;   // added
+  final Object? arguments; // added
 
   const CustomNavButton({
     super.key,
@@ -37,18 +37,16 @@ class CustomNavButton extends StatelessWidget {
       width: double.infinity,
       child: ElevatedButton.icon(
         onPressed: () {
-sprint-2-3.24-navigation-arguments
           Navigator.pushNamed(
             context,
             routeName,
-            arguments: arguments,   // pass arguments
+            arguments: arguments, // pass arguments
           );
 
           final page = _routeMap[routeName];
           if (page != null) {
             Navigator.push(context, SlideRightRoute(page: page));
           }
- main
         },
         icon: Icon(icon ?? Icons.arrow_forward),
         label: Text(title),
