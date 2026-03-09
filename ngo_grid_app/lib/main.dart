@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
-
+import 'screens/signup_screen.dart';
 import 'screens/home_screen.dart';
 import 'screens/dashboard_screen.dart';
 import 'screens/welcome_screen.dart';
@@ -72,6 +72,18 @@ class MyApp extends StatelessWidget {
 
       initialRoute: '/',
 
+ sprint-2-3.27-firebase-auth
+      routes: {
+        '/': (context) => const HomeScreen(),
+        '/dashboard': (context) => const DashboardScreen(),
+        '/welcome': (context) => const WelcomeScreen(),
+        '/responsive': (context) => const ResponsiveLayout(),
+        '/volunteers': (context) => const VolunteerListScreen(),
+        '/tasks': (context) => const TaskGridScreen(),
+        '/form': (context) => const VolunteerFormScreen(),
+        '/login': (context) => const LoginScreen(),
+        '/signup': (context) => const SignupScreen(),
+
       onGenerateRoute: (settings) {
         Widget page;
         switch (settings.name) {
@@ -106,7 +118,9 @@ class MyApp extends StatelessWidget {
             page = const MainNavigationScreen(); // Fallback route
         }
         return SlideRightRoute(page: page);
+ main
       },
     );
+    
   }
 }

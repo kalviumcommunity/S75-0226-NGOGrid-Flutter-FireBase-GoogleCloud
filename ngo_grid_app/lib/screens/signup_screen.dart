@@ -1,36 +1,52 @@
-// ignore_for_file: use_build_context_synchronously
-
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
-class LoginScreen extends StatefulWidget {
-  const LoginScreen({super.key});
+class SignupScreen extends StatefulWidget {
+  const SignupScreen({super.key});
 
   @override
-  State<LoginScreen> createState() => _LoginScreenState();
+  State<SignupScreen> createState() => _SignupScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _SignupScreenState extends State<SignupScreen> {
 
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
 
-  Future<void> loginUser() async {
+  Future<void> signupUser() async {
     try {
 
-      await FirebaseAuth.instance.signInWithEmailAndPassword(
+      await FirebaseAuth.instance.createUserWithEmailAndPassword(
         email: emailController.text.trim(),
         password: passwordController.text.trim(),
       );
 
-      Navigator.pushNamed(context, '/dashboard');
-
-    } catch (e) {
-
+      // ignore: use_build_context_synchronously
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text("Login Failed: $e")),
+        const SnackBar(content: Text("Account Created Successfully")),
       );
 
+      // ignore: use_build_context_synchronously
+      Navigator.pushNamed(context, '/dashboard');
+
+    } on FirebaseAuthException catch (e) {
+
+      String message = "";
+
+      if (e.code == 'weak-password') {
+        message = "Password is too weak";
+      } 
+      else if (e.code == 'email-already-in-use') {
+        message = "Email already exists";
+      } 
+      else {
+        message = e.message ?? "Signup failed";
+      }
+
+      // ignore: use_build_context_synchronously
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text(message)),
+      );
     }
   }
 
@@ -38,7 +54,7 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("NGO Login"),
+        title: const Text("Sign Up"),
       ),
 
       body: Padding(
@@ -66,18 +82,8 @@ class _LoginScreenState extends State<LoginScreen> {
             const SizedBox(height: 30),
 
             ElevatedButton(
-              onPressed: loginUser,
-              child: const Text("Login"),
-            ),
-
-            const SizedBox(height: 20),
-
-            // 🔹 SIGN UP BUTTON
-            TextButton(
-              onPressed: () {
-                Navigator.pushNamed(context, '/signup');
-              },
-              child: const Text("Create New Account"),
+              onPressed: signupUser,
+              child: const Text("Create Account"),
             ),
 
           ],
