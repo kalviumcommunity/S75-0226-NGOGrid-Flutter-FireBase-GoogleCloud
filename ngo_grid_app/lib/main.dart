@@ -10,6 +10,8 @@ import 'screens/volunteer_list_screen.dart';
 import 'screens/task_grid_screen.dart';
 import 'screens/volunteer_form_screen.dart';
 import 'screens/login_screen.dart';
+import 'screens/main_navigation_screen.dart';
+import 'transitions/slide_transition.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -70,6 +72,7 @@ class MyApp extends StatelessWidget {
 
       initialRoute: '/',
 
+ sprint-2-3.27-firebase-auth
       routes: {
         '/': (context) => const HomeScreen(),
         '/dashboard': (context) => const DashboardScreen(),
@@ -80,6 +83,42 @@ class MyApp extends StatelessWidget {
         '/form': (context) => const VolunteerFormScreen(),
         '/login': (context) => const LoginScreen(),
         '/signup': (context) => const SignupScreen(),
+
+      onGenerateRoute: (settings) {
+        Widget page;
+        switch (settings.name) {
+          case '/':
+            page = const MainNavigationScreen();
+            break;
+          case '/home':
+            page = const HomeScreen();
+            break;
+          case '/dashboard':
+            page = const DashboardScreen();
+            break;
+          case '/welcome':
+            page = const WelcomeScreen();
+            break;
+          case '/responsive':
+            page = const ResponsiveLayout();
+            break;
+          case '/volunteers':
+            page = const VolunteerListScreen();
+            break;
+          case '/tasks':
+            page = const TaskGridScreen();
+            break;
+          case '/form':
+            page = const VolunteerFormScreen();
+            break;
+          case '/login':
+            page = const LoginScreen();
+            break;
+          default:
+            page = const MainNavigationScreen(); // Fallback route
+        }
+        return SlideRightRoute(page: page);
+ main
       },
     );
     

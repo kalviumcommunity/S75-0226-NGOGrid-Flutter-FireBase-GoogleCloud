@@ -1,17 +1,14 @@
 import 'package:flutter/material.dart';
-import '../transitions/slide_transition.dart';
-import '../screens/dashboard_screen.dart';
-import '../screens/welcome_screen.dart';
-import '../screens/responsive_layout.dart';
-import '../screens/volunteer_list_screen.dart';
-import '../screens/task_grid_screen.dart';
-import '../screens/volunteer_form_screen.dart';
 
 class CustomNavButton extends StatelessWidget {
   final String title;
   final String routeName;
   final IconData? icon;
+ sprint-2-3.26-firebase-setup
   final Object? arguments; // added
+
+  final Object? arguments;
+ main
 
   const CustomNavButton({
     super.key,
@@ -20,16 +17,6 @@ class CustomNavButton extends StatelessWidget {
     this.icon,
     this.arguments,
   });
-
-  // A map to get the widget from the route name
-  static final Map<String, Widget> _routeMap = {
-    '/dashboard': const DashboardScreen(),
-    '/welcome': const WelcomeScreen(),
-    '/responsive': const ResponsiveLayout(),
-    '/volunteers': const VolunteerListScreen(),
-    '/tasks': const TaskGridScreen(),
-    '/form': const VolunteerFormScreen(),
-  };
 
   @override
   Widget build(BuildContext context) {
@@ -40,6 +27,7 @@ class CustomNavButton extends StatelessWidget {
           Navigator.pushNamed(
             context,
             routeName,
+ sprint-2-3.26-firebase-setup
             arguments: arguments, // pass arguments
           );
 
@@ -47,6 +35,9 @@ class CustomNavButton extends StatelessWidget {
           if (page != null) {
             Navigator.push(context, SlideRightRoute(page: page));
           }
+    arguments: arguments,
+          );
+ main
         },
         icon: Icon(icon ?? Icons.arrow_forward),
         label: Text(title),
